@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:comicCharacter="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_settings"
+        android:orderInCategory="100"
+        comicCharacter:showAsAction="never"
+        android:title="@string/search_menu_item"
+        />
+
+
+    <item
+        android:id="@+id/search_view"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="search_menu_title"
+        android:orderInCategory="50"
+        comicCharacter:showAsAction="always"
+        comicCharacter:actionViewClass="android.support.v7.widget.SearchView"
+         />
+</menu>
