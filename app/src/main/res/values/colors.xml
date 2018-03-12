@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="ComicPrimaryTextColor">@color/md_red_500</color>
+    <color name="ComicSecondaryTextColor">@color/md_blue_A200</color>
+    <color name="ComicPrimaryBackground">@color/md_black_1000</color>
+    <color name="ComicSecondaryBackgroud">@color/md_grey_700</color>
+    <color name="ComicBackgroundAccent">@color/md_amber_700</color>
+
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
 </resources>

@@ -2,9 +2,7 @@ package com.example.juanlu.comic;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.drm.ProcessedData;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -76,10 +74,23 @@ public class MainActivity extends BaseActivity {
         );
         String query = getSavedPreferenceData(COMIC_CHARACTER_TRANSFER);
         if (query.length() > 0) {
-            ProcessComicCharacter processComicCharacter = new ProcessComicCharacter();
+            ProcessComicCharacter processComicCharacter
+                    = new ProcessComicCharacter(query);
             processComicCharacter.execute();
         }
     }
+
+
+    private String getSavedPreferenceData(String comicCharacterQuery) {
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(
+                        getApplicationContext()
+                );
+
+        return sharedPreferences.getString(comicCharacterQuery, "spider-man");
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,20 +117,9 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-    private String getSavedPreferenceData(String comicCharacterQuery) {
-        SharedPreferences sharedPreferences =
-                PreferenceManager.getDefaultSharedPreferences(
-                        getApplicationContext()
-                );
-
-        return sharedPreferences.getString(comicCharacterQuery, "spider-man");
-    }
-
-
-    public class ProcessComicCharacter extends getComicCharacterJsonData {
-        public ProcessComicCharacter() {
-            super();
+    public class ProcessComicCharacter extends GetComicCharacterJsonData {
+        public ProcessComicCharacter(String searchCriteria) {
+            super(searchCriteria);
         }
 
         @Override

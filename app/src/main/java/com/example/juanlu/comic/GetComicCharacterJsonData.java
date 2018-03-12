@@ -14,15 +14,15 @@ import java.util.List;
  * Created by juanlu on 9/03/18.
  */
 
-public class getComicCharacterJsonData extends GetRawData {
-    private static final String LOG_TAG = getComicCharacterJsonData.class.getSimpleName();
+public class GetComicCharacterJsonData extends GetRawData {
+    private static final String LOG_TAG = GetComicCharacterJsonData.class.getSimpleName();
 
     private List<ComicCharacter> mComicCharacters;
     private Uri mDestinationUri;
 
-    public getComicCharacterJsonData() {
+    public GetComicCharacterJsonData(String searchCriteria) {
         super(null);
-        createAndUpdateUri();
+        createAndUpdateUri(searchCriteria);
         mComicCharacters = new ArrayList<>();
     }
 
@@ -30,17 +30,15 @@ public class getComicCharacterJsonData extends GetRawData {
         return mComicCharacters;
     }
 
-    public void setmComicCharacters(List<ComicCharacter> mComicCharacters) {
-        this.mComicCharacters = mComicCharacters;
-    }
-
-    private boolean createAndUpdateUri() {
+    private boolean createAndUpdateUri(String searchCriteria) {
         final String COMIC_CHARACTER_API_URL = "http://gateway.marvel.com/v1/public/characters";
+        final String NAME_START_WITH = "nameStartsWith";
         final String API_KEY = "apikey";
         final String TIMESTAMP = "ts";
         final String HASH = "hash";
 
         mDestinationUri = Uri.parse(COMIC_CHARACTER_API_URL).buildUpon()
+                .appendQueryParameter(NAME_START_WITH, searchCriteria)
                 .appendQueryParameter(TIMESTAMP, "1")
                 .appendQueryParameter(API_KEY, "8522cdaa29595d1d39341a8775395119")
                 .appendQueryParameter(HASH, "99b75f4350fe82711327d1a29cba3b56")

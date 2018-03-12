@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintTop_toBottomOf="@+id/app_bar"
-        comicCharacter:cardBackgroundColor="?colorPrimary"
+        comicCharacter:cardBackgroundColor="@color/ComicPrimaryBackground"
         comicCharacter:cardCornerRadius="0dp"
         comicCharacter:cardPreventCornerOverlap="false"
         comicCharacter:layout_constraintLeft_toLeftOf="parent"
@@ -46,7 +46,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="3"
-                android:contentDescription="comic_character Description"
+                android:contentDescription="@string/comic_character_image"
                 android:scaleType="centerCrop"
                 android:src="@drawable/placeholder" />
 
@@ -58,7 +58,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/ComicPrimaryTextColor"
                 android:textSize="24sp" />
 
             <TextView
@@ -69,8 +69,9 @@
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
                 android:paddingTop="8dp"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
+                android:textColor="@color/ComicSecondaryTextColor"
+                android:textSize="20sp"
+                />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </android.support.constraint.ConstraintLayout>

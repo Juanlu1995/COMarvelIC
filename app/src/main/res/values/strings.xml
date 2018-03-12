@@ -5,5 +5,8 @@
     <string name="search_view_label">search view</string>
     <string name="searchable_hint">searchable</string>
     <string name="search_activity_label">Search Label</string>
-    <string name="comic_character_detail_activity_title">comic character title</string>
+    <string name="comic_character_detail_activity_title">Comic character</string>
+    <string name="search_menu_title">Searchable Item</string>
+    <string name="browse_description">description</string>
+    <string name="comic_character_image">Imagen Comic</string>
 </resources>

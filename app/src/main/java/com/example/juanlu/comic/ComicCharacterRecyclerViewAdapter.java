@@ -39,7 +39,8 @@ class ComicCharacterRecyclerViewAdapter extends RecyclerView.Adapter<ComicCharac
         );
         view.setLayoutParams(lp);
 
-        ComicCharacterRecyclerViewHolder comicCharacterRecyclerViewHolder = new ComicCharacterRecyclerViewHolder(view);
+        ComicCharacterRecyclerViewHolder comicCharacterRecyclerViewHolder
+                = new ComicCharacterRecyclerViewHolder(view);
 
         return comicCharacterRecyclerViewHolder;
     }
