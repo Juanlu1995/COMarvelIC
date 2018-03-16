@@ -2,6 +2,7 @@ package com.example.juanlu.comic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class ViewComicCharacterDetailsActivity extends BaseActivity {
         comicCharacterTitle.setText(comicCharacter.getmTitle());
 
         TextView comicCharacterDescription = findViewById(R.id.comic_character_description);
+        comicCharacterDescription.setMovementMethod(new ScrollingMovementMethod());
         comicCharacterDescription.setText(comicCharacter.getDescription());
 
         ImageView comicCharacterImage = findViewById(R.id.comic_character_image);
